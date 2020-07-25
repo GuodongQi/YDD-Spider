@@ -1,9 +1,9 @@
 # YDD微信小程序爬虫
-天天看论文跑实验脑壳疼，无心磕盐换个口味玩玩：Python爬虫ydd微信小程序，获取你所关心（滑稽）的人帖子和评论, 储存到数据库中.
+天天看论文跑实验脑壳疼，无心磕盐换个口味玩玩：Python爬虫ydd微信小程序，获取你所关心（滑稽）的人帖子和评论, 储存到数据库中, 以弥补ydd无法按用户名搜索内容的功能
 
 ## 实现思路
 1. 使用抓包工具获取session和token.（安卓用户需要root。虽然笔者之前就拥有了root权限，但是为了将证书放入系统目录，仍花了一下午时间踩了无数个坑）
-2. 查看网络返回json结构：
+2. 查看网络返回json结构：\
 <img src="./assert/post_scructure.png" width = "330" height = "400" alt="图片名称" align=center />  \
 因此根据上图可以建立两个表：
    * 用户发帖表，包含的键有帖子id，用户昵称，时间戳等。
@@ -14,11 +14,11 @@
 3. 一些逻辑，防止重复添加用户帖子或评论。（其中包含很多查询和循环，随着数据库的增大，速率会变低很多。数据库知识储备不足，不lan会de优化）
 4. 效果展示：
     * 用户发帖表
-     <img src="./assert/all_post.png" width = "800" height = "400" alt="图片名称" align=center /> 
+     <img src="./assert/all_post.png" width = "850" height = "400" alt="图片名称" align=center /> 
      
     * 用户评论表
-     <img src="./assert/comment_1.png" width = "800" height = "400" alt="图片名称" align=center />  
-     <img src="./assert/comment_2.png" width = "800" height = "400" alt="图片名称" align=center />  
+     <img src="./assert/comment_1.png" width = "300" height = "800" alt="图片名称" align=center />  
+     <img src="./assert/comment_2.png" width = "900" height = "400" alt="图片名称" align=center />  
 
 ## How to run
 1. Environment:
